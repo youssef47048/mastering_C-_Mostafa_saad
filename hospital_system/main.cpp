@@ -9,10 +9,12 @@ void add()
     int num;
     string name;
     cin >> num>>name>>status;
-    if(status)
-        m[num].push_front(name);
-    else
-        m[num].push_back(name);
+    if(m[num].size()<5){
+        if(status)
+            m[num].push_front(name);
+        else
+            m[num].push_back(name);
+    }else cout<<"Sorry!\n It is complete\n";
 
 }
 void print()
