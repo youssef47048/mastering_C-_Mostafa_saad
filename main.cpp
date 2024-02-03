@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-map<int,deque<string> >m;
+unordered_map<int,deque<string> >m;
 void add(){
     cout<<"Enter specialization, name, status:  ";
     bool status;
