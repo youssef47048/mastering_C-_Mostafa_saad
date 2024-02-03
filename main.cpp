@@ -15,7 +15,7 @@ void add(){
 
 }
 void print(){
-    map<int,deque<string> >::iterator itr;
+    unordered_map<int,deque<string> >::iterator itr;
     for(int i = 1 ;i<=20;i++){
         if((m[i].size())){
             cout<<"There are "<<m[i].size()<<" patients in specialization "<<i<<endl;
@@ -29,7 +29,7 @@ void get_next(){
     int num ;
     cout<<"Enter specialization \n";
     cin>>num;
-    if(m[num].size()>5){
+    if(m[num].empty()){
         cout<<"No patients at the moment, Have rest, Dr\n";
     }else {
         cout<<m[num].front()<<" go with the doctor\n";
@@ -38,14 +38,18 @@ void get_next(){
 }
 int main()
 {
+    string st;
     int n;
+
     do{
        cout<< "Enter your choice\n";
        cout<< "1) Add new patient\n";
        cout<<"2) Print all patients\n";
        cout<<"3) Get next patient\n";
         cout<<"4) Exit\n";
-        m:cin >>n;
+        cin >>st;
+        if(isdigit(st[0])){
+         n = stoi(st);
         switch(n){
         case 1:
             add();
@@ -58,10 +62,17 @@ int main()
             break;
          case 4:
              return 0;
-      //i could not make it to reiterate.
+        default:
             cout<<"unvalid number\n";
 
+
+
         }
-    }while(n>=1&&n<=4);
+        }else{
+            cout<<"unvalid number\n";
+            n = 1;
+        }
+
+    }while(n);
     return 0;
 }
