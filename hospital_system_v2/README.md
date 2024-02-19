@@ -1,5 +1,6 @@
 # HOSPITAL SYSTEM
-## **Project describtion**
+This new version of the project includes more professional implementation using *struct*
+## Project describtion
 * There are 20 different specialization (e.g. Children, Surgery, etc)
 * For each specialization, there are only 5 available spots [queue]
 
